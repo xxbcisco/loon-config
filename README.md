@@ -2,7 +2,9 @@
 
 This repository contains routing rules only. It contains no nodes, subscription URLs, accounts, passwords, or certificates.
 
-`loon-routing.conf` uses blackmatrix7/ios_rule_script Loon-native remote rules. The upstream rules update in Loon; this repository is only for maintaining your selected services, rule order, and policy-group name.
+`loon-routing.conf` uses blackmatrix7/ios_rule_script Loon-native remote rules. The upstream rules update in Loon; this repository is only for maintaining your selected services, rule order, and policy-group name. Its remote-rule lines use Loon's official minimal syntax: `URL,policy=...,enabled=true`.
+
+Use `loon-routing.conf` in Loon's configuration import/subscription flow. Do not add the `.conf` URL from the rule-subscription screen: that screen expects actual lines such as `DOMAIN-SUFFIX,example.com`, so a configuration file produces "no usable rules". The `.conf` itself contains the remote rule definitions and should be loaded as a configuration.
 
 Before importing, replace `PROXY` with the policy group name that exists in your Loon profile.
 
